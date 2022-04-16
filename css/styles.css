@@ -1,0 +1,993 @@
+*{
+    box-sizing: border-box;
+}
+/* Valores en 0 permiten controlar completamente proporciones de elementos HTML5 en la página */
+
+html{
+    font-size: 90%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+body {
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+  color: black;
+  height: 100%;
+  background-color: white;
+  max-width: 100%;
+  margin-top: 70px;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Previene overflow por encima de nav fija*/
+  font-family: 'Prata', serif;
+}
+
+/* prata-regular - latin */
+@font-face {
+  font-family: 'Prata';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/prata-v17-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/fonts/prata-v17-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/prata-v17-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/prata-v17-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('/fonts/prata-v17-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/prata-v17-latin-regular.svg#Prata') format('svg'); /* Legacy iOS */
+}
+
+/* lato-regular - latin-ext_latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/lato-v22-latin-ext_latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/lato-v22-latin-ext_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/lato-v22-latin-ext_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/lato-v22-latin-ext_latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/lato-v22-latin-ext_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/lato-v22-latin-ext_latin-regular.svg#Lato') format('svg'); /* Legacy iOS */
+}
+
+/* Position relative permite jugar con flexbox para ubicar otras
+divs que tengan Position absolute encima y dar efecto superposición*/
+.header-img {
+  display: flex;
+  height: 120px;
+  width: 100%;
+  position: relative;
+}
+
+/* Estilo banner */
+.header-img img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-basis: 30%;
+  height: 120px;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.logo .logo-link {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  font-weight: bold;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.logo .logo-link a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+}
+
+.logo .logo-link a:hover {
+  color: #FFE190;
+}
+
+.nav-bar {
+  display: flex;
+  align-content: flex-end;
+  justify-content: flex-end;
+  flex-direction: row;
+  flex-basis: 70%;
+  width: 100%;
+}
+
+.nav-bar img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}
+
+.nav-bar .flag {
+  display: flex;
+  height: 30px;
+  width: 30px;
+}
+
+.nav-bar a{
+  display: flex;
+  text-decoration: none;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+}
+
+#nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  height: 120px;
+  width: 100%;
+  padding-right: 30px;
+  list-style-type: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+#nav-bar .links {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-end;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left: 30px;
+  width: 100%;
+}
+
+#nav-bar .cerrar {
+  display: none;
+}
+
+#nav-bar .icon {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+#nav-bar .links a.active {
+  background: #FFE190;
+}
+
+#nav-bar a {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  padding: 6px;
+  border-radius: 12px;
+  margin-right: 30px;
+}
+
+#nav-bar a:hover{
+    background: #FFE190;
+}
+
+@media only screen and (max-width: 600px) {
+  .header .header-img {
+    height: 150px;
+  }
+}
+
+/* Esta opción permite ocultar navbar y muestra menú sandwich como apps en móviles */
+@media only screen and (max-width: 600px) {
+  #nav-bar .links a {
+    display: none;
+  }
+
+  #nav-bar .links .icon {
+    background: #FFE190;
+    display: block;
+    float: right;
+    height: auto;
+    width: 40px;
+    color: white;
+    text-align: center;
+    object-fit: cover;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon.
+This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px ) {
+  #nav-bar .links.responsive {
+    position: relative;
+  }
+
+  #nav-bar .links.responsive a.icon {
+    position: absolute;
+    right:0;
+    top: 0;
+    display: inline-block;
+  }
+
+  #nav-bar .links.responsive {
+    display: flex;
+  }
+
+  #nav-bar .cerrar {
+    display: flex;
+  }
+
+  #nav-bar .index {
+    display: none;
+  }
+
+  body {
+    margin-top: 90px;
+  }
+
+  .logo {
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-bar {
+    margin-top: 40px;
+  }
+
+  #nav-bar a {
+      display: flex;
+      margin: 3px;
+      font-size: 0.8rem;
+      background: black;
+      border: 1px solid white;
+      color: white;
+      text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+  }
+
+  #nav-bar a:hover {
+    background-color: #FFE190; /* Añade color al pasar por encima (hover) */
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+  }
+}
+
+main {
+  margin-left: 3%;
+  margin-right: 3%;
+  max-width: 100%;
+  line-height: 1.4;
+}
+
+/* Botón para ir arriba en la navegación */
+#topBtn {
+  display: none; /* Botón escondido por defecto */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Ubica el botón al fondo de la página */
+  right: 20px; /* Posiciona el botón a 30px de la derecha */
+  z-index: 99; /* Evita overlap */
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  border: 2px inset white;
+  font-weight: bold;
+  cursor: pointer; /* Muestra el cursor al pasar por encima */
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+#topBtn:hover {
+  background-color: #FFE190; /* Añade color al pasar por encima (hover) */
+  color: white;
+  border: 1px solid white;
+  text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.content #description {
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  max-width: 100%;
+}
+
+.intro.hero {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Reglas para títulos */
+
+h1 {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Prata', serif;
+  color: black;
+  font-weight: 900;
+  /* Animación desde el centro on hover */
+  background-image: linear-gradient(black,black), linear-gradient(white, white);
+  background-size: 0 3px, auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: all .4s ease-out;
+  /* Fin Animación on hover */
+}
+
+h1:hover {
+  /* la propiedad comentada hace que el subrayado sea solo de la longitud del texto,
+  de otro modo, ocupa el 100% del background de lo que se esté subrayando */
+  /* background-size: calc(100% - 2em) 5px, auto; */
+  background-size: 40% 3px, auto;
+}
+
+.welcomeSplash:hover {
+  background-image: none;
+}
+
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+
+em {
+  font-weight: 900;
+}
+
+hr {
+  border-style: none;
+  border-top-style: dotted;
+  border-color: black;
+  border-width: 5px;
+  width: 6%;
+}
+
+.division {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+}
+
+.division2 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.legend {
+  display: flex;
+  flex-basis: 50%;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.paragraph {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+  background:  #FFE190;
+  border-radius: 8px;
+  opacity: 0.8;
+  font-weight: 700;
+  width: 100%;
+  flex-basis: 100%;
+}
+
+.imgContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  flex-basis: 15%;
+  flex-wrap: wrap;
+}
+
+#imglocal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  object-position: center;
+  max-height: 500px;
+  object-fit: contain;
+  border: 2px;
+  border-radius: 8px;
+  flex-basis: 50%;
+}
+
+.imagenes-galeria {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+.imagenes-galeria-col{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.imagenes-galeria-col img {
+  width: 100%;
+  max-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+.img-gallery {
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+.serviceContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-basis: 60%;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.serviceList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+}
+
+h4 {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Prata', serif;
+  color: black;
+  font-weight: 900;
+}
+
+.servIncluded {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.service i {
+  color:#FFE190;
+  background: white;
+  font-size: 40px;
+  padding: 20px;
+  border: 1px black;
+  border-style: inset;
+  border-radius: 20px;
+  text-shadow: 0.2px 0.2px 0.2px black, 0 0 0.05em black, 0 0 0.1em black;
+}
+
+.service i:hover {
+  color: white;
+  background: black;
+}
+
+.service p {
+  display: flex;
+  font-weight: bold;
+  font-size: 14px;
+  color: black;
+}
+
+.pricing {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  align-content: center;
+  border-radius: 8px;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  border: 2px black;
+  border-style: inset;
+  border-radius: 8px;
+  flex-basis: 40%;
+  width: 100%;
+  align-items: center;
+  align-content: center;
+}
+
+.priceId {
+  display: flex;
+  flex-direction: row;
+  background: black;
+  height: 100px;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+  width: 100%;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: center;
+}
+
+.priceId p {
+  margin-right: 30px;
+  font-family: 'Prata', serif;
+  font-weight: bold;
+}
+
+.priceId i {
+  font-size: 40px;
+}
+
+.priceInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+
+li {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  max-width: 100%;
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-basis: 50%;
+  text-align: center;
+  font-weight: bold;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  max-width: 100%;
+  padding: 5px;
+}
+
+.map{
+  display: flex;
+  flex-basis: 50%;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+}
+
+.address {
+  display: flex;
+  flex-basis: 50%;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  font-family: 'Prata', serif;
+  padding: 15px;
+}
+
+.location2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-basis: 50%;
+  text-align: center;
+  font-weight: bold;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+}
+
+.contactData {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  font-family: 'Prata', serif;
+  width: 100%;
+  flex-basis: 50%;
+}
+
+.contactData p {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  font-weight: bold;
+}
+
+.contactData i {
+  text-align: right;
+  margin: 5px;
+  color: white;
+  background: black;
+  font-size: 24px;
+  padding: 8px;
+  border-radius: 8px;
+  text-shadow: 0.5px 0.5px 1px black, 0 0 0.5em black, 0 0 0.1em black;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactData #mobile i:hover {
+  background: #25D366;
+}
+
+.contactData #mail i:hover {
+  background: #002ead;
+}
+
+.fb-preview {
+  display: flex;
+  flex-basis: 50%;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFE190;
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  color: black;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-family: 'Prata', serif;
+}
+
+.form label {
+  display: flex;
+  text-align: center;
+}
+
+.form h4 {
+  font-size: 16px;
+}
+
+.subscribe {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.form input {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.control {
+  background-color: white;
+  color: black;
+  width: 70%;
+  font-weight: bold;
+  margin-right: 20px;
+  height: 40px;
+  font-family: 'Prata', serif;
+  border-radius: 8px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.e-mail {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Elimina autofill background en Chrome y mantiene tema de diseño, no funciona
+si background es transparente. Importante darle color*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.submit {
+  color: white;
+  font-size: 16px;
+  font-weight: 900;
+  font-family: 'Prata', serif;
+  width: 25%;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background-color: black;
+  border-radius: 8px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.submit:hover {
+  color: black;
+  background: white;
+  text-shadow: 0.2px 0.2px 0.2px black, 0 0 0.05em black, 0 0 0.1em black;
+}
+
+.footerWeb {
+  display: block;
+  width: 100%;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.footerWeb p {
+  text-align: center;
+  color: white;
+  padding: 30px;
+  font-weight: 900;
+  font-family: 'Prata', serif;
+  font-size: 12px;
+}
+
+/* Media Queries generales, algunas invierten el órden de los elementos de Los
+contenedores y en otros casos alteran las proporciones */
+
+@media screen and (max-width: 600px) {
+  .division {
+    flex-direction: column-reverse;
+    justify-content: space-around;
+  }
+  .division2 {
+    flex-direction: column;
+  }
+  #imglocal {
+    max-height: 400px;
+    object-fit: cover;
+  }
+
+  .service i {
+    font-size: 30px;
+  }
+
+  .pricing {
+    flex-direction: column;
+  }
+
+  .price {
+      margin-bottom: 10px;
+  }
+
+  .contactInfo {
+    flex-direction: column;
+  }
+
+  .location2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .e-mail {
+    flex-direction: column;
+  }
+
+  .subscribe {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .control {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .submit {
+    width: 100%;
+  }
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 667px) {
+  #nav-bar {
+    font-size: 0.9rem;
+  }
+
+  #nav-bar .index {
+    display: none;
+  }
+
+  .contactInfo {
+    flex-direction: column;
+  }
+
+  .location2 {
+    flex-direction: row;
+  }
+
+  .division {
+    flex-direction: column-reverse;
+    justify-content: space-around;
+  }
+
+  .division2 {
+    flex-direction: column;
+  }
+
+  .location {
+    flex-direction: row-reverse;
+    width: 100%;
+  }
+}
+
+
+@media screen and (min-width: 668px) and (max-width: 915px) {
+  .division {
+    flex-direction: column-reverse;
+    justify-content: space-around;
+  }
+
+  #nav-bar .index {
+    display: none;
+  }
+
+
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .division {
+      padding: 10px;
+      justify-content: space-around;
+  }
+
+  #imglocal {
+    padding: 10px;
+  }
+
+}
+
+/* Media Queries para iframe de mapa */
+@media screen and (min-width: 896px) and (max-width: 915px) {
+  .map iframe {
+      width: 400px;
+      height: 300px;
+    }
+  }
+
+  @media screen and (min-width: 916px) and (max-width: 1024px) {
+    .map iframe {
+        width: 463px;
+        height: 300px;
+      }
+    }
+
+    @media screen and (min-width: 1025px) and (max-width: 1180px) {
+      .map iframe {
+          width: 535px;
+          height: 300px;
+        }
+      }
+
+  @media screen and (min-width: 1280px) and (max-width: 1368px) {
+    .map iframe {
+        width: 625px;
+        height: 300px;
+      }
+    }
+
+  @media screen and (max-width: 280px) {
+    .map iframe {
+        width: 260px;
+        height: 300px;
+      }
+    .fb-preview iframe {
+      width: 260px;
+      height: 300px;
+      }
+    }
+/*  .
