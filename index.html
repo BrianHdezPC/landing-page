@@ -27,7 +27,7 @@
           <div class="nav-bar">
             <nav id="nav-bar">
                 <div class="links" id="mylinks">
-                    <a href="index.html" class="nav-link index"><i class="fa-solid fa-house-chimney"></i></a>
+                    <a href="#welcomeSplash" class="nav-link index"><i class="fa-solid fa-house-chimney"></i></a>
                     <a href="#description" class="nav-link description">Apartaestudios</a>
                     <a href="#services" class="nav-link services">Servicios y Tarifas</a>
                     <a href="#contact" class="nav-link contact">Contacto</a>
@@ -45,7 +45,7 @@
       <main>
         <div class="content">
           <br><br><br>
-          <h1 class="welcomeSplash">¡Bienvenidos(as) a la ciudad de Santa Marta! </h1>
+          <h1 class="welcomeSplash" id="welcomeSplash">¡Bienvenidos(as) a la ciudad de Santa Marta! </h1>
           <div class="intro">
             <div class="hero">
               <div class="video" id="video">
@@ -63,7 +63,7 @@
         <p ></p>
         <h1> Los Apartaestudios </h1>
         <div class="division" >
-          <img src="images/28.jpg" width="100%" id="imglocal">
+          <img src="images/28.jpg" width="100%" id="imglocal" alt="Imagen vista exterior Apartaestudios">
           <div class="legend">
             <div class="paragraph">
               <p>En <em>Santa Marta Apartaestudios</em> encontrará el espacio ideal para alojarse, con una mezcla de excelente atención, buenos servicios e instalaciones de calidad a muy buenos precios. <br><br>
@@ -77,43 +77,43 @@
           <div class="imgContainer">
             <div class="imagenes-galeria">
               <div class="imagenes-galeria-col">
-                <img src="images/14.jpg" width="100%" class="img-gallery">
+                <img src="images/14.jpg" width="100%" class="img-gallery" alt="Vista desde segundo piso de la zona común">
               </div>
               <div class="imagenes-galeria-col">
-                <img src="images/18.jpeg" width="100%" class="img-gallery">
+                <img src="images/18.jpeg" width="100%" class="img-gallery" alt="Perspectiva de uno de los Apartaestudios al entrar">
               </div>
               <div class="imagenes-galeria-col">
-                <img src="images/12.jpeg" width="100%" class="img-gallery">
+                <img src="images/12.jpeg" width="100%" class="img-gallery" alt="Muestra de amoblamiento">
               </div>
               <div class="imagenes-galeria-col">
-                <img src="images/17.jpeg" width="100%" class="img-gallery">
+                <img src="images/17.jpeg" width="100%" class="img-gallery" alt="Vista a habitación">
               </div>
               <div class="imagenes-galeria-col">
-                <img src="images/11.jpeg" width="100%" class="img-gallery">
+                <img src="images/11.jpeg" width="100%" class="img-gallery" alt="Vista del área de Cocina">
               </div>
               <div class="imagenes-galeria-col">
-                <img src="images/15.jpeg" width="100%" class="img-gallery">
+                <img src="images/15.jpeg" width="100%" class="img-gallery" alt="Vista del área de Cocina, cocineta">
               </div>
               <div class="imagenes-galeria-col">
-                <img src="images/21.jpeg" width="100%" class="img-gallery">
+                <img src="images/21.jpeg" width="100%" class="img-gallery" alt="Vista alternativa del área de cocina, se ven gabinetes, lavaplatos y mesón">
               </div>
               <div class="imagenes-galeria-col">
-                <img src="images/31.jpg" width="100%" class="img-gallery">
+                <img src="images/31.jpg" width="100%" class="img-gallery" alt="Ejemplo de habitación para tres personas con una cama individual y cama tipo litera">
               </div>
               <div class="imagenes-galeria-col">
-                <img src="images/4.jpeg" width="100%" class="img-gallery">
+                <img src="images/4.jpeg" width="100%" class="img-gallery" alt="Vista habitación doble, con closet y TV">
               </div>
               <div class="imagenes-galeria-col">
-                <img src="images/7.jpeg" width="100%" class="img-gallery">
+                <img src="images/7.jpeg" width="100%" class="img-gallery" alt="Vista de habitación doble con ventiladores">
               </div>
               <div class="imagenes-galeria-col">
-                <img src="images/27.jpeg" width="100%" class="img-gallery">
+                <img src="images/27.jpeg" width="100%" class="img-gallery" alt="Ejemplo de habitación para tres personas con camas individuales">
               </div>
               <div class="imagenes-galeria-col">
-                <img src="images/32.jpg" width="100%" class="img-gallery">
+                <img src="images/32.jpg" width="100%" class="img-gallery" alt="Vista de baño, se aprecia un lavamanos, inodoro y area de ducha con puerta deslizante">
               </div>
               <div class="imagenes-galeria-col">
-                <img src="images/3.jpeg" width="100%" class="img-gallery">
+                <img src="images/3.jpeg" width="100%" class="img-gallery" alt="Vista de baño, se aprecia un lavamanos, inodoro y una papelera">
               </div>
             </div>
           </div>
@@ -136,6 +136,7 @@
                 todo el año y temporadas turísticas.<br><br> Aceptamos clientes con mascotas (bajo compromiso total de buen comportamiento e higiene). <i class="fa-solid fa-dog"></i> <i class="fa-solid fa-cat"></i></p>
               </div>
             </div>
+            <!-- Contenedor con lista de servicios e íconos  -->
             <div class="serviceContainer">
               <div class="serviceList">
                 <h4>Servicios incluídos</h4>
@@ -214,7 +215,10 @@
             </div>
           </div>
         </div>
+        <!-- Fin Sección de Servicios y Precios -->
+
         <br><br>
+        <!-- Sección de contacto -->
         <hr id="contact">
         <br><br>
         <div class="content">
@@ -243,7 +247,10 @@
            </div>
           </div>
         </div>
+        <!-- Fin de Sección de contacto -->
+
         <br>
+
         <!-- Feed, invita a suscribirse, pero dado que la página es estática en este momentos, solo es decorativo  -->
         <div class="form" >
           <div class="feed">
@@ -253,23 +260,27 @@
             <form class="e-mail" id= "form" action="#contact" method="get">
               <label id="email-label" for="email" style="font-weight:bold;">Correo Electrónico:</label>
               <input  required type="email" name="email" id="email" value="" placeholder="abc@example.com"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]$" class="control no-autofill-bkg">
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$" class="control no-autofill-bkg">
               <br>
               <input type="submit" class="submit" id="submit" value="Suscribirse">
               <br>
             </form>
           </div>
         </div>
+        <!-- Fin de Sección de feed -->
+
       </main>
       <!-- Fin del sitio  -->
       <br>
       <hr>
       <br><br>
+
       <!-- Footer  -->
       <footer class="footerWeb">
         <p>© 2022 Copyright Santa Marta Apartaestudios <br><br>
         Desarrollado por: Brian Hernández Obregón</p>
       </footer>
+      <!-- Fin Footer  -->
 
     <!-- Scripts -->
     <script type="text/javascript" src="scripts.js"></script>
