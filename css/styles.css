@@ -3,6 +3,20 @@
 }
 /* Valores en 0 permiten controlar completamente proporciones de elementos HTML5 en la página */
 
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: white;
+    color: black;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+}
+
 html{
     font-size: 90%;
     overflow-x: hidden;
@@ -205,7 +219,7 @@ divs que tengan Position absolute encima y dar efecto superposición*/
   justify-content: space-around;
   text-align: center;
   align-items: center;
-  padding: 7px;
+  padding: 10px;
   border-radius: 12px;
   margin-right: 30px;
   background-color: black;
